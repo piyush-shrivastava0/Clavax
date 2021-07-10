@@ -1,0 +1,60 @@
+E:\Clavax Task\Machine Test _ Clavax\obj\Debug\Machine Test _ Clavax.csproj.CoreCompileInputs.cache
+E:\Clavax Task\Machine Test _ Clavax\obj\Debug\Machine Test _ Clavax.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\Machine Test _ Clavax.dll.config
+E:\Clavax Task\Machine Test _ Clavax\bin\Machine Test _ Clavax.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\Machine Test _ Clavax.pdb
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\csc.exe
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\csc.exe.config
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\csc.rsp
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\csi.exe
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\csi.rsp
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\System.AppContext.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\System.Collections.Immutable.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\System.IO.FileSystem.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\System.Reflection.Metadata.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\vbc.exe
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\vbc.exe.config
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\vbc.rsp
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\VBCSCompiler.exe
+E:\Clavax Task\Machine Test _ Clavax\bin\roslyn\VBCSCompiler.exe.config
+E:\Clavax Task\Machine Test _ Clavax\bin\Antlr3.Runtime.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\EntityFramework.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\EntityFramework.SqlServer.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\Microsoft.Web.Infrastructure.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\Newtonsoft.Json.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Helpers.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Mvc.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Optimization.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Razor.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.WebPages.Deployment.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.WebPages.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.WebPages.Razor.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\WebGrease.dll
+E:\Clavax Task\Machine Test _ Clavax\bin\EntityFramework.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\EntityFramework.SqlServer.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Helpers.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Mvc.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Optimization.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.Razor.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.WebPages.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.WebPages.Deployment.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\System.Web.WebPages.Razor.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\Newtonsoft.Json.xml
+E:\Clavax Task\Machine Test _ Clavax\bin\Antlr3.Runtime.pdb
+E:\Clavax Task\Machine Test _ Clavax\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Clavax Task\Machine Test _ Clavax\obj\Debug\Machine Test _ Clavax.csproj.CopyComplete
+E:\Clavax Task\Machine Test _ Clavax\obj\Debug\Machine Test _ Clavax.pdb
+E:\Clavax Task\Machine Test _ Clavax\obj\Debug\Machine Test _ Clavax.csprojAssemblyReference.cache

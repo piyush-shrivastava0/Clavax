@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Machine_Test___ClavaxDBEntities">
+    <EntitySetMapping Name="Employee_Registration">
+      <EntityTypeMapping TypeName="Model.Employee_Registration">
+        <MappingFragment StoreEntitySet="Employee_Registration">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee ID" />
+          <ScalarProperty Name="Employee_Name" ColumnName="Employee Name" />
+          <ScalarProperty Name="Employee_DOB" ColumnName="Employee DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="State_fid" ColumnName="State_fid" />
+          <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State_Master">
+      <EntityTypeMapping TypeName="Model.State_Master">
+        <MappingFragment StoreEntitySet="State_Master">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Hobby">
+      <EntityTypeMapping TypeName="Model.Employee_Hobby">
+        <MappingFragment StoreEntitySet="Employee_Hobby">
+          <ScalarProperty Name="emp_fid" ColumnName="emp_fid" />
+          <ScalarProperty Name="hobby_fid" ColumnName="hobby_fid" />
+          <ScalarProperty Name="emp_hobby_id" ColumnName="emp_hobby_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hobby_Master">
+      <EntityTypeMapping TypeName="Model.Hobby_Master">
+        <MappingFragment StoreEntitySet="Hobby_Master">
+          <ScalarProperty Name="hobbyName" ColumnName="hobbyName" />
+          <ScalarProperty Name="hobbyID" ColumnName="hobbyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

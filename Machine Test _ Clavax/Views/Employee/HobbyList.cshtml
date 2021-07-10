@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Machine_Test___Clavax.DB.Hobby_Master>
+
+@{
+    ViewBag.Title = "Hobby Master";
+}
+
+<h2>Hobby Master</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateHobby")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.hobbyName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hobbyName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditHobby", new { id = item.hobbyID }) |
+                @Html.ActionLink("Delete", "DeleteHobby", new { id = item.hobbyID })
+            </td>
+        </tr>
+    }
+
+</table>

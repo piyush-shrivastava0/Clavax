@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Machine_Test___Clavax.DB.Employee_Registration>
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Employee List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateRegistration")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Employee ID")
+        </th>
+        <th>
+            @Html.DisplayName("Employee Name")
+        </th>
+        <th>
+            @Html.DisplayName("DOB")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hobbies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State_Master.StateName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee_DOB)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @foreach (var s in item.Employee_Hobby)
+        {
+            @Html.DisplayFor(modelItem => s.Hobby_Master.hobbyName)
+            <span> </span>
+            @*@s.Hobby_Master.hobbyName*@
+        }
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.State_Master.StateName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditRegistration", new { id = item.Employee_ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Employee_ID })
+    </td>
+</tr>
+    }
+
+</table>

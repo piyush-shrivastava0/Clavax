@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee_Registration">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_DOB" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="State_fid" Type="Int32" />
+    <Property Name="Hobbies" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="State_Master" Relationship="Self.FK_Employee_Registration_State_Master" FromRole="Employee_Registration" ToRole="State_Master" />
+    <NavigationProperty Name="Employee_Hobby" Relationship="Model.FK_Employee_Hobby_Employee_Registration" FromRole="Employee_Registration" ToRole="Employee_Hobby" />
+  </EntityType>
+  <EntityType Name="State_Master">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee_Registration" Relationship="Self.FK_Employee_Registration_State_Master" FromRole="State_Master" ToRole="Employee_Registration" />
+  </EntityType>
+  <Association Name="FK_Employee_Registration_State_Master">
+    <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+    <End Role="Employee_Registration" Type="Self.Employee_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_Master">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Employee_Registration">
+        <PropertyRef Name="State_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Machine_Test___ClavaxDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employee_Registration" EntityType="Self.Employee_Registration" />
+    <EntitySet Name="State_Master" EntityType="Self.State_Master" />
+    <AssociationSet Name="FK_Employee_Registration_State_Master" Association="Self.FK_Employee_Registration_State_Master">
+      <End Role="State_Master" EntitySet="State_Master" />
+      <End Role="Employee_Registration" EntitySet="Employee_Registration" />
+    </AssociationSet>
+    <EntitySet Name="Employee_Hobby" EntityType="Model.Employee_Hobby" />
+    <EntitySet Name="Hobby_Master" EntityType="Model.Hobby_Master" />
+    <AssociationSet Name="FK_Employee_Hobby_Employee_Registration" Association="Model.FK_Employee_Hobby_Employee_Registration">
+      <End Role="Employee_Registration" EntitySet="Employee_Registration" />
+      <End Role="Employee_Hobby" EntitySet="Employee_Hobby" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Hobby_Hobby_Master" Association="Model.FK_Employee_Hobby_Hobby_Master">
+      <End Role="Hobby_Master" EntitySet="Hobby_Master" />
+      <End Role="Employee_Hobby" EntitySet="Employee_Hobby" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hobby_Master_Hobby_Master" Association="Model.FK_Hobby_Master_Hobby_Master">
+      <End Role="Hobby_Master" EntitySet="Hobby_Master" />
+      <End Role="Hobby_Master1" EntitySet="Hobby_Master" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Employee_Hobby">
+    <Key>
+      <PropertyRef Name="emp_hobby_id" />
+    </Key>
+    <Property Name="emp_hobby_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hobby_fid" Type="Int32" />
+    <Property Name="emp_fid" Type="Int32" />
+    <NavigationProperty Name="Employee_Registration" Relationship="Model.FK_Employee_Hobby_Employee_Registration" FromRole="Employee_Hobby" ToRole="Employee_Registration" />
+    <NavigationProperty Name="Hobby_Master" Relationship="Model.FK_Employee_Hobby_Hobby_Master" FromRole="Employee_Hobby" ToRole="Hobby_Master" />
+  </EntityType>
+  <EntityType Name="Hobby_Master">
+    <Key>
+      <PropertyRef Name="hobbyID" />
+    </Key>
+    <Property Name="hobbyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hobbyName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee_Hobby" Relationship="Model.FK_Employee_Hobby_Hobby_Master" FromRole="Hobby_Master" ToRole="Employee_Hobby" />
+    <NavigationProperty Name="Hobby_Master1" Relationship="Model.FK_Hobby_Master_Hobby_Master" FromRole="Hobby_Master" ToRole="Hobby_Master1" />
+    <NavigationProperty Name="Hobby_Master2" Relationship="Model.FK_Hobby_Master_Hobby_Master" FromRole="Hobby_Master1" ToRole="Hobby_Master" />
+  </EntityType>
+  <Association Name="FK_Employee_Hobby_Employee_Registration">
+    <End Type="Model.Employee_Registration" Role="Employee_Registration" Multiplicity="0..1" />
+    <End Type="Model.Employee_Hobby" Role="Employee_Hobby" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Registration">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Employee_Hobby">
+        <PropertyRef Name="emp_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Hobby_Hobby_Master">
+    <End Type="Model.Hobby_Master" Role="Hobby_Master" Multiplicity="0..1" />
+    <End Type="Model.Employee_Hobby" Role="Employee_Hobby" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hobby_Master">
+        <PropertyRef Name="hobbyID" />
+      </Principal>
+      <Dependent Role="Employee_Hobby">
+        <PropertyRef Name="hobby_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hobby_Master_Hobby_Master">
+    <End Type="Model.Hobby_Master" Role="Hobby_Master" Multiplicity="1" />
+    <End Type="Model.Hobby_Master" Role="Hobby_Master1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Hobby_Master">
+        <PropertyRef Name="hobbyID" />
+      </Principal>
+      <Dependent Role="Hobby_Master1">
+        <PropertyRef Name="hobbyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

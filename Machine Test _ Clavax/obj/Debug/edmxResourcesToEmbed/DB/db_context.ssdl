@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Employee_Hobby">
+    <Key>
+      <PropertyRef Name="emp_hobby_id" />
+    </Key>
+    <Property Name="emp_hobby_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hobby_fid" Type="int" />
+    <Property Name="emp_fid" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee_Registration">
+    <Key>
+      <PropertyRef Name="Employee ID" />
+    </Key>
+    <Property Name="Employee ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee Name" Type="varchar" MaxLength="100" />
+    <Property Name="Employee DOB" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="State_fid" Type="int" />
+    <Property Name="Hobbies" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Hobby_Master">
+    <Key>
+      <PropertyRef Name="hobbyID" />
+    </Key>
+    <Property Name="hobbyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hobbyName" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="State_Master">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Employee_Hobby_Employee_Registration">
+    <End Role="Employee_Registration" Type="Self.Employee_Registration" Multiplicity="0..1" />
+    <End Role="Employee_Hobby" Type="Self.Employee_Hobby" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Registration">
+        <PropertyRef Name="Employee ID" />
+      </Principal>
+      <Dependent Role="Employee_Hobby">
+        <PropertyRef Name="emp_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Hobby_Hobby_Master">
+    <End Role="Hobby_Master" Type="Self.Hobby_Master" Multiplicity="0..1" />
+    <End Role="Employee_Hobby" Type="Self.Employee_Hobby" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hobby_Master">
+        <PropertyRef Name="hobbyID" />
+      </Principal>
+      <Dependent Role="Employee_Hobby">
+        <PropertyRef Name="hobby_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Registration_State_Master">
+    <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+    <End Role="Employee_Registration" Type="Self.Employee_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_Master">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Employee_Registration">
+        <PropertyRef Name="State_fid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hobby_Master_Hobby_Master">
+    <End Role="Hobby_Master" Type="Self.Hobby_Master" Multiplicity="1" />
+    <End Role="Hobby_Master1" Type="Self.Hobby_Master" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Hobby_Master">
+        <PropertyRef Name="hobbyID" />
+      </Principal>
+      <Dependent Role="Hobby_Master1">
+        <PropertyRef Name="hobbyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Employee_Hobby" EntityType="Self.Employee_Hobby" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Registration" EntityType="Self.Employee_Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hobby_Master" EntityType="Self.Hobby_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State_Master" EntityType="Self.State_Master" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employee_Hobby_Employee_Registration" Association="Self.FK_Employee_Hobby_Employee_Registration">
+      <End Role="Employee_Registration" EntitySet="Employee_Registration" />
+      <End Role="Employee_Hobby" EntitySet="Employee_Hobby" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Hobby_Hobby_Master" Association="Self.FK_Employee_Hobby_Hobby_Master">
+      <End Role="Hobby_Master" EntitySet="Hobby_Master" />
+      <End Role="Employee_Hobby" EntitySet="Employee_Hobby" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Registration_State_Master" Association="Self.FK_Employee_Registration_State_Master">
+      <End Role="State_Master" EntitySet="State_Master" />
+      <End Role="Employee_Registration" EntitySet="Employee_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hobby_Master_Hobby_Master" Association="Self.FK_Hobby_Master_Hobby_Master">
+      <End Role="Hobby_Master" EntitySet="Hobby_Master" />
+      <End Role="Hobby_Master1" EntitySet="Hobby_Master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Machine_Test___Clavax.DB.State_Master>
+@{
+    ViewBag.Title = "State Master";
+}
+
+<h2>State Master</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateState")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StateName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditState", new { id = item.StateID }) |
+                @Html.ActionLink("Delete", "DeleteState", new { id = item.StateID })
+            </td>
+        </tr>
+    }
+
+</table>
